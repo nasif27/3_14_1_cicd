@@ -18,10 +18,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-      
+
       - name: Build
         run: npm run build
-      
+
       - name: Run tests
         run: npm test
 
@@ -34,7 +34,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: GitHub Actions - Build Failure
-          body:
+          body: |
             The recent build has failed.
 
             - Repository: ${{ github.repository }}
